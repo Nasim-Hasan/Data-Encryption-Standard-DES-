@@ -1,0 +1,46 @@
+Andres Cuevas
+Nasim Hasan
+CS 478
+5/04/16
+Assignment 3
+
+Program encryption.c decrypts an encrypted session key and prints the 
+result in plaintext as "decrypted.key".
+It then uses the key and generates a "random" IV for DES encryption
+stored in "IV.txt".
+It takes in a plainttext and uses the session key and random IV to
+encrypt and create a cyphertext.
+It takes the ciphertext and signs it using the signers private PEM key
+into "signature.sha2"
+
+Program decrypt.c takes a decrypts the cyphertext and decripts it.
+It takes a signature and verifies its authenticy.
+
+
+
+
+Makefile included, to compile simply enter "make"
+to run a test command:
+
+"make run_e" to run encryption.c with preset arguments. 
+"make run_d" to run decrypt.c with preset arguments.
+"make clean" will remove all object files and anything named:
+encrypt
+decrypt
+IV.txt
+cyphertext.txt
+decrypted.key
+decryptedtext.txt
+signature.sha2
+
+To test your own text files, the command syntax is:
+
+./encryption <INPUT FILE> <OUTPUT FILE> <OWN PRIVATE KEY> <THIRD PARTY PUBLIC KEY> <ENCRYPTED SESSION KEY>
+
+or
+
+./decrypt <INPUT FILE> <OUTPUT FILE> <THIRD PARTY PUBLIC KEY> <PLAINTEXT SESSION KEY FILE> <IV FILE> <SIGNATURE>
+
+
+simply entering ./encryption or ./decrypt to receive a reminder of syntax
+

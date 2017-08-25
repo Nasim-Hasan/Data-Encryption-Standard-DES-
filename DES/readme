@@ -1,0 +1,25 @@
+Andres Cuevas
+Nasim Hasan
+CS 478
+4/10/16
+Assignment 2
+
+Program executes DES-CBC cryptography.
+Makefile included, to compile simply enter "make"
+to run a test, command:
+
+"make run_e" to create an encrypt txt file of test.txt, and 
+"make run_d" to decrypt the out.txt file back into the original message.
+
+To test your own text files or to cross check with OpenSSL, the command syntax is:
+
+./DES <OPEARTION> <INPUT FILE NAME> <OUTPUT FILE NAME> [<HEX KEY>] [<HEX IV>]
+
+where OPERATION can be: 
+'-enc' for encryption, with quotes, and 
+'-dec' for decryption, again without quotes
+
+The hex key and IV are optional, if not inputed, they will be generated for you
+and outputed into a file called "Key_IV.txt". Key must come before the IV.
+
+Decryption requires both a key and an IV.
